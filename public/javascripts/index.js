@@ -138,9 +138,10 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.temperature) {
+      if(!obj.time) {
         return;
       }
+      
       timeData.push(obj.time);
       temperatureData.push(obj.temperature);
       // only keep no more than 50 points in the line chart
@@ -151,23 +152,17 @@ $(document).ready(function () {
         temperatureData.shift();
       }
 
-      if (obj.powervoltage) {
-        powervoltageData.push(obj.powervoltage);
-      }
+      powervoltageData.push(obj.powervoltage);
       if (powervoltageData.length > maxLen) {
         powervoltageData.shift();
       }
 
-      if (obj.luminous) {
-        luminousData.push(obj.luminous);
-      }
+      luminousData.push(obj.luminous);
       if (luminousData.length > maxLen) {
         luminousData.shift();
       }
 
-      if (obj.humidity) {
-        humidityData.push(obj.humidity);
-      }
+      humidityData.push(obj.humidity);
       if (humidityData.length > maxLen) {
         humidityData.shift();
       }
