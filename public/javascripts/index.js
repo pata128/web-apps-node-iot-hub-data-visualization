@@ -174,6 +174,7 @@ $(document).ready(function () {
       }
 
       myLineChart.update();
+      myLineChart2.update();
     } catch (err) {
       console.error(err);
     }
