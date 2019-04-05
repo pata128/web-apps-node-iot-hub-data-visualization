@@ -20,6 +20,23 @@ $(document).ready(function () {
       },
       {
         fill: false,
+        label: 'Humidity',
+        yAxisID: 'Humidity',
+        borderColor: "rgba(24, 120, 240, 1)",
+        pointBoarderColor: "rgba(24, 120, 240, 1)",
+        backgroundColor: "rgba(24, 120, 240, 0.4)",
+        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
+        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        data: humidityData
+      }
+    ]
+  }
+
+  var data2 = {
+    labels: timeData,
+    datasets: [
+      {
+        fill: false,
         label: 'Power Voltage',
         yAxisID: 'Power Voltage',
         borderColor: "rgba(203, 27, 69, 1)",
@@ -39,17 +56,6 @@ $(document).ready(function () {
         pointHoverBackgroundColor: "rgba(38, 135, 133, 1)",
         pointHoverBorderColor: "rgba(38, 135, 133, 1)",
         data: luminousData
-      },
-      {
-        fill: false,
-        label: 'Humidity',
-        yAxisID: 'Humidity',
-        borderColor: "rgba(24, 120, 240, 1)",
-        pointBoarderColor: "rgba(24, 120, 240, 1)",
-        backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: humidityData
       }
     ]
   }
@@ -120,7 +126,7 @@ $(document).ready(function () {
   var ctx2 = document.getElementById("myChart2").getContext("2d");
   var myLineChart2 = new Chart(ctx2, {
     type: 'line',
-    data: data,
+    data: data2,
     options: basicOption2
   });
 
