@@ -172,13 +172,6 @@ $(document).ready(function () {
         humidityData.shift();
       }
 
-      if (obj.humidity) {
-        humidityData.push(obj.humidity);
-      }
-      if (humidityData.length > maxLen) {
-        humidityData.shift();
-      }
-
       myLineChart.update();
       myLineChart2.update();
     } catch (err) {
